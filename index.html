@@ -28,41 +28,67 @@
 
 <body>
     <main class="container" id="mainContainer">
-        <div class="jumbotron jumbotron-fluid">
-            <a href="https://wikiwiki.jp/slaythespire/"  target="_blank">Slay the Spire攻略 Wiki*</a>のCS版翻訳ブックマークレットです。
+        <div class="jumbotron">
+            <h1 class="display-4">パーフェクトストライク？フルストライク？という混乱を解決するブックマークレット</h1>
         </div>
 
+        <h3 class="alert alert-primary">1. これは何</h3>
+        <p>
+            <a href="https://wikiwiki.jp/slaythespire/" target="_blank">Slay the Spire攻略 Wiki*</a>のCS版翻訳ブックマークレットです。
+        </p>
         <p>
             Slay the Spire CS版(PlayStation,Switch,スマホなど)はSteam版とは一部カード名などが異なっており、Wiki内ではSteam版が採用されているため混乱しますが、これを解消します。
         </p>
 
+        <div>
+            <blockquote class="alert alert-secondary">
+                CS版発売に際して、Kakehashi Gamesのローカライズによって翻訳が大きく変わった用語がある。
+                Steam版は一時統一ののち差し戻されたが、CS版及び後発のスマホ版はKakehashi Games翻訳を採用している。
+            </blockquote>
+            <p>
+                <a href="https://wikiwiki.jp/slaythespire/CS版翻訳一覧">CS版翻訳一覧</a>より引用
+            </p>
+        </div>
 
-        <pre>
-  CS版発売に際して、Kakehashi Gamesのローカライズによって翻訳が大きく変わった用語がある。
-  Steam版は一時統一ののち差し戻されたが、CS版及び後発のスマホ版はKakehashi Games翻訳を採用している。
-</pre>
-        <a href="https://wikiwiki.jp/slaythespire/CS版翻訳一覧">CS版翻訳一覧</a>より引用
-
-
-        <h1>ブックマークレットの作り方</h1>
+        <h3 class="alert alert-primary">2. ブックマークレットの作り方</h3>
 
         <p>
-            次のページを参照ください。
             <a href="http://book.tsuhankensaku.com/hon/bookmarklet-googlechrome.html#drag-and-drop"
                 target="_blank">http://book.tsuhankensaku.com/hon/bookmarklet-googlechrome.html#drag-and-drop</a>
+            <br>を参照ください。
             <br>
             Chromeの話ですが、EdgeやFirefoxなど他のPCブラウザでも共通です。スマホへのブックマークレット登録方法はググってください。
-            <br>
-            「ドラッグ&ドロップ」による登録の方法を使って、下のリンクを登録してください。
+        </p>
         <p>
-            <a href="javascript: void (import('https://waka5791.github.io/StSPCtoCS/x.js').then(m => m.default()));"
+            「ドラッグ&ドロップ」による登録の方法を使って、下のリンクを登録してください。
+        </p>
+        <p>
+            <a class="btn btn-primary"
+                href="javascript: void (import('https://waka5791.github.io/StSPCtoCS/x.js').then(m => m.default()));"
                 title="StSPStoCS">StS Wiki CS翻訳</a>
         </p>
 
-        <h1>使い方</h1>
+        <h3 class="alert alert-primary">3.使い方</h3>
+        <p>
+            <a href="https://wikiwiki.jp/slaythespire/" target="_blank">Slay the Spire攻略
+                Wiki*</a>内のCS版翻訳に変更したいページで、ブックマークレットをクリックします。
 
-        <a href="https://wikiwiki.jp/slaythespire/" target="_blank">Slay the Spire攻略
-            Wiki*</a>内のCS版翻訳に変更したいページで、ブックマークレットをクリックします。
+        <p>
+            CS版翻訳に変換された用語の末尾には「*」がつきます。
+        <blockquote class="alert alert-secondary">
+            例：フルストライク*
+        </blockquote>
+        </p>
+        </p>
+
+        <footer class="row container text-center unselectable">
+            <div class="col-sm-12">
+                <a href="https://github.com/" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+                /
+                <a href="https://getbootstrap.com/" target="_blank"><i class="fab fa-bootstrap"></i>Bootstrap</a>
+            </div>
+            <div class="col-sm-12">&copy; 2022 &middot; わか / a.k.a waka</div>
+        </footer>
     </main>
 </body>
 
