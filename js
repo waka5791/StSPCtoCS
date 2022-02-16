@@ -169,4 +169,4 @@ export default () => {
 			el.textContent = _hash[el.textContent] + '*';
 		}
 	}
-})();
+}
