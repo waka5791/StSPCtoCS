@@ -1,4 +1,4 @@
-javascript:(function(){
+export default () => {  
 	let target = document.getElementsByTagName('body')[0];
 
 	const _hash =
