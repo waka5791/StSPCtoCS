@@ -1,6 +1,4 @@
 export default () => {
-    let target = document.getElementsByTagName('body')[0];
-
     const _hash =
     {
         'パーフェクトストライク': 'フルストライク',
@@ -160,13 +158,12 @@ export default () => {
         '機敏ポーション': '敏捷性ポーション'
     };
 
-
     let _hashKey = document.querySelectorAll('h1.title')[0].textContent;
     let _hashVal = _hash[_hashKey];
-    if (_hashVal) {
+    if (_hashKey && _hashVal) {
         let _sels = document.querySelectorAll('title, li, #topicpath');
         _sels.forEach(_el => {
-            reg = new RegExp(_hashKey, 'g');
+            let reg = new RegExp(_hashKey, 'g');
             _el.innerHTML = _el.innerHTML.replaceAll(reg, _hashVal);
         });
     }
