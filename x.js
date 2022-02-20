@@ -165,6 +165,10 @@ export default () => {
         '機敏ポーション': '敏捷性ポーション'
     };
 
+    let _title = document.querySelector('span.title2').textContent;
+    document.querySelector('span.title2').textContent = '[CS翻訳]' + _title;
+    document.querySelector('span.title2').style.color = 'white';
+
     let _hashKey = document.querySelectorAll('h1.title')[0].textContent;
     let _hashVal = _hash[_hashKey];
     if (_hashKey && _hashVal) {
@@ -173,8 +177,14 @@ export default () => {
             _el.innerHTML = _el.innerHTML.replaceAll(_hashKey, _hashVal);
         });
     }
-    let _els = document.querySelectorAll('a.rel-wiki-page, h1.title, strong');
-    _els.forEach(_el => {
+    
+    document.querySelectorAll('a.rel-wiki-page').forEach(_el => {
+        if (_hash[_el.textContent]) {
+            _el.textContent = _hash[_el.textContent] + '*';
+        }
+    });
+
+    document.querySelectorAll('strong, h1.title').forEach(_el => {
         if (_hash[_el.textContent]) {
             _el.textContent = _hash[_el.textContent] + '*';
         }
