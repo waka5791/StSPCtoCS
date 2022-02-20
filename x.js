@@ -1,4 +1,11 @@
 export default () => {
+    let _body = document.getElementsByTagName('body')[0];
+    const _doneFlag = 'StSPCtoCSDone';
+
+    if (_body.classList.contains(_doneFlag)) {
+        return;
+    };
+
     const _hash =
     {
         'パーフェクトストライク': 'フルストライク',
@@ -163,8 +170,8 @@ export default () => {
     if (_hashKey && _hashVal) {
         let _sels = document.querySelectorAll('title, li, #topicpath');
         _sels.forEach(_el => {
-            let reg = new RegExp(_hashKey, 'g');
-            _el.innerHTML = _el.innerHTML.replaceAll(reg, _hashVal);
+            let _keyReg = new RegExp(_hashKey, 'g');
+            _el.innerHTML = _el.innerHTML.replaceAll(_keyReg, _hashVal);
         });
     }
     let _els = document.querySelectorAll('a.rel-wiki-page, h1.title, strong');
@@ -173,4 +180,16 @@ export default () => {
             _el.textContent = _hash[_el.textContent] + '*';
         }
     });
+
+    const _etcHash = {
+        'エセリアル': 'エーテリアル',
+        'アセンション': '登塔レベル',
+        'アーティファクト': '人の作りしもの'
+    };
+
+    Object.keys(_etcHash).forEach(key => {
+        _body.innerHTML = _body.innerHTML.replaceAll(new RegExp(key, 'g'), `${_etcHash[key]}(${key})`);
+    });
+    
+    _body.classList.add(_doneFlag);
 }
