@@ -170,8 +170,7 @@ export default () => {
     if (_hashKey && _hashVal) {
         let _sels = document.querySelectorAll('title, li, #topicpath');
         _sels.forEach(_el => {
-            let _keyReg = new RegExp(_hashKey, 'g');
-            _el.innerHTML = _el.innerHTML.replaceAll(_keyReg, _hashVal);
+            _el.innerHTML = _el.innerHTML.replaceAll(_hashKey, _hashVal);
         });
     }
     let _els = document.querySelectorAll('a.rel-wiki-page, h1.title, strong');
@@ -184,12 +183,16 @@ export default () => {
     const _etcHash = {
         'エセリアル': 'エーテリアル',
         'アセンション': '登塔レベル',
-        'アーティファクト': '人の作りしもの'
+        'アーティファクト': '人の作りしもの',
+        'レベル1-序章': '第1章-幕開け',
+        'レベル2-シティ': '第2章-栄えし所',
+        'レベル3-彼方': '第3章-彼方',
+        'レベル?-終点': '最終章-終幕'
     };
 
     Object.keys(_etcHash).forEach(key => {
-        _body.innerHTML = _body.innerHTML.replaceAll(new RegExp(key, 'g'), `${_etcHash[key]}(${key})`);
+        _body.innerHTML = _body.innerHTML.replaceAll(key, `${_etcHash[key]}`);
     });
-    
+
     _body.classList.add(_doneFlag);
 }
